@@ -31,10 +31,19 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnDetailCategory.setOnClickListener { view ->
+            /*menggunakan Bundle
             val mBundle = Bundle()
             mBundle.putString(EXTRA_NAME, "Lifestyle")
             mBundle.putLong(EXTRA_DESCRIPTION, 7)
             view.findNavController().navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle)
+             */
+
+            // menggunakan sageargs
+
+            val toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment()
+            toDetailCategoryFragment.name = "Lifestyle"
+            toDetailCategoryFragment.description = 7
+            view.findNavController().navigate(toDetailCategoryFragment)
         }
     }
     override fun onDestroy() {

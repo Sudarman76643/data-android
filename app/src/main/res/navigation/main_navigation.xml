@@ -24,7 +24,8 @@
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_categoryFragment_to_detailCategoryFragment"
-            app:destination="@id/detailCategoryFragment" />
+            app:destination="@id/detailCategoryFragment" >
+        </action>
     </fragment>
     <activity
         android:id="@+id/profileActivity"
@@ -35,13 +36,14 @@
         android:id="@+id/detailCategoryFragment"
         android:name="com.example.mynavcompt.DetailCategoryFragment"
         android:label="fragment_detail_category"
-        tools:layout="@layout/fragment_detail_category" />
-    <argument
-        android:name="name"
-        app:argType="string"
-        android:defaultValue="default name" />
-    <argument
-        android:name="description"
-        app:argType="long"
-        android:defaultValue="0L" />
+        tools:layout="@layout/fragment_detail_category">
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="default name" />
+        <argument
+            android:name="description"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
 </navigation>
